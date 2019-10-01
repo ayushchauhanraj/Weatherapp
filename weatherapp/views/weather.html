@@ -1,0 +1,22 @@
+<div>
+    <h5 class="display-4">Wheather details</h5>
+
+    <div class="card border-success mb-3" style="max-width: 90rem;padding:10px">
+        <h5 class="card-title text-success"> {{data.timezone}}</h5>
+        <div class="card-header text-primary">{{data.daily.summary}}</div>
+    </div>
+    <ul>
+
+        <li style="list-style-type: none;display: inline-block;padding: 12px" ng-repeat='day in data.daily.data'>
+            <div class="card border-success mb-3" style="max-width: 20rem;max-height: 18rem">
+                <div class="card-header text-primary"> {{day.time *1000 |date:'EEEE, MMMM d, y'}}</div>
+                <div class="card-body text-success">
+                    <h6 class="card-title">{{day.summary}}</h6>
+                    <p class="card-text">sunrise Time :{{day.sunriseTime*1000|date:'h:mma'}} sunset
+                        Time:{{day.sunsetTime*1000|date:'h:mma'}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>

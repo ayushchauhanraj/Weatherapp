@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/js/mod.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/model.js"></script>
+    <script src="/js/controller.js"></script>
+
+    <script src="http://labs.easyblog.it/maps/leaflet-search/examples/data/restaurant.geojson.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+    <script
+        src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
+
+
+
+    <style>
+        body {
+            height: 90%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #1 {
+
+            width: 110%;
+        }
+
+        #mapid {
+            height: 500px;
+
+            width: 100%;
+        }
+    </style>
+
+    <title>Weatherapp</title>
+</head>
+
+<body ng-app='weather'>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Find Weather</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <hr>
+    <div ng-controller='weatherController'>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a ng-href='#' ng-click='getMylocation()'><img
+                    ng-src="man.png" style='width:23px;height:20px' alt=""></a></button>
+        <div id="mapid"></div><br>
+        <hr>
+        <div style='background:snow' id='1' ng-view=""></div>
+    </div>
+</body>
+
+</html>
